@@ -1,42 +1,107 @@
-#root {
-  max-width: 1280px;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, div {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --body-bg: #191a1a;
+  --body-fg: #e7e6e5;
+
+  --stroke: rgba(127.5, 127.5, 127.5, 0.4);
+  --primary: #DB5599;
+
+  --filled-fg: white;
+  --filled-bg: #990461;
+
+  --button-tint: #312;
+
+  background: var(--body-bg);
+  color: var(--body-fg);
+  line-height: 1.5;
+}
+
+body {
+  max-width: 100ch;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 0.5rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.paper {
+  text-decoration: none;
+  color: var(--body-fg);
+
+  border: .1rem solid var(--stroke);
+  box-shadow: 0.15rem 0.15rem rgba(0, 0, 0, 0.65);
+  margin: 0.2rem 0.3rem;
+  padding: 0 0.5rem;
+  transform: rotate(var(--angle, 0));
+
+  background: var(--button-tint);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+#root > h1 {
+  display: block;
+  width: fit-content;
+  margin: 2rem auto;
+
+  padding: 1rem;
+
+  color: var(--primary);
+  font-size: 2rem;
+}
+
+#quickjump {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+
+  input {
+    flex-grow: 1;
+
+    padding: 0.2em 0;
+    font-size: 1em;
   }
-  to {
-    transform: rotate(360deg);
+
+  br {
+    width: 0.5em;
+  }
+
+  button {
+    padding: 0.2em 0.5em;
+    font-size: 1em;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+main#listing {
+  h2 {
+    background: var(--filled-bg);
+    color: var(--filled-fg);
+    margin: 3em 0 0;
+
+    padding: 0 calc((1lh - 1em) / 2);
+  }
+
+  h3 {
+    margin: 1em;
+
+    &::before {
+      content: "#";
+    }
+  }
+
+  ul {
+    margin-top: 0;
   }
 }
 
-.card {
-  padding: 2em;
+hr {
+  margin: 4em 0;
 }
 
-.read-the-docs {
-  color: #888;
+#root > section {
+  margin: 0.5rem 0;
 }
