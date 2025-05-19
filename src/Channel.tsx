@@ -47,7 +47,7 @@ function Attached(props: { attachment: Attachment }) {
   if (imageExtensions.some(ext => name.toLowerCase().endsWith(ext))) {
     return <div className="attachment">
       <a href={"export/" + url}>{name}</a>
-      <img src={"export/" + url} />
+      <img loading="lazy" src={"export/" + url} />
     </div>
   } else {
     return <div className="attachment">
