@@ -5,3 +5,11 @@ Currently specifically for TTGSoc.
 
 The export data is not included in this repo; it is expected to be in the `export/` folder next to the app (at `public/export` if you're running with npm).
 Additionally, an `index.json` needs to be generated (to `public/export` when using npm) using `tools/index.py`.
+
+## Deploying
+
+```sh
+mv public/export public-export
+npm run build && rclone sync dist/ r2:arkives-kwellig-garden/ --exclude='export/**'
+mv public-export public/export
+```
